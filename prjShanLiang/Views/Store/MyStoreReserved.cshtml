@@ -19,45 +19,6 @@
     </style>
 }
 
-<!-- Modal互動視窗 -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-size:30px; margin-left:150px;">點餐紀錄</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr style="text-align:center;">
-                            <th>
-                                訂單編號
-                            </th>
-                            <th>
-                                店家
-                            </th>
-                            <th>
-                                金額
-                            </th>
-                            <th>
-                                訂單時間
-                            </th>
-                            <th>
-                                備註
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="table1">
-                        @*點餐紀錄出現在這*@
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
 <main id="main">
    
         <!-- ======= Breadcrumbs ======= -->
@@ -87,8 +48,7 @@
                         </th>
                         <th>
                             人數
-                        </th>
-                        <th></th>
+                        </th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -104,21 +64,15 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Store.RestaurantName)
                                 </td>
-                                <td class="newdate">
-                                    @Html.DisplayFor(modelItem => item.Date)
+                                <td >
+                                    @item.Date.GetValueOrDefault().Year / @item.Date.GetValueOrDefault().Month / @item.Date.GetValueOrDefault().Day
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Time)
+                                    @item.Time.ToString().Substring(0,2) : @item.Time.ToString().Substring(2,2)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.NumOfPeople)
-                                </td>
-                                <td>
-                                    <!-- 按下觸發Model互動視窗 並觸發con(OrderId)方法 -->
-                                    <div type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal" onclick="con(@item.StoreId)">
-                                        點餐紀錄
-                                    </div>
-                                </td>
+                                </td>                               
                             </tr>
                         }
                     }
@@ -130,22 +84,3 @@
         </div>
     </div>
 </main><!-- End #main -->
-@section Scripts{
-    <script>
-        async function con(id) {
-            const dataTbody = document.getElementById('table1')
-            const res = await fetch('@Url.Content("~/Store/LinkMealOrder/")' + id);
-            const v = await res.json();
-            htmlData = `<tr style="text-align:center;"><td>${v.orderId}</td><td>${v.restaurantName}</td><td>${v.total}</td><td>${v.orderDate}</td><td>${v.remark}</td></tr>`;
-            dataTbody.innerHTML = htmlData;
-        };
-        const newDate = document.querySelectorAll('.newdate');
-        for(let i = 0; i<newDate.length; i++){
-            if (newDate[i].innerHTML.length>47){
-                let item1 = newDate[i].innerHTML;                
-                item1 = item1.substring(0, 47);
-                newDate[i].innerHTML = item1;
-            }
-        }
-    </script>
-    }

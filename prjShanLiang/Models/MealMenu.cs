@@ -19,5 +19,5 @@ public partial class MealMenu
 
     public virtual ICollection<MealOrderDetail> MealOrderDetails { get; set; } = new List<MealOrderDetail>();
 
-    public virtual Store? Store { get; set; }
+    public virtual Store? Store { get; set; }    
 }

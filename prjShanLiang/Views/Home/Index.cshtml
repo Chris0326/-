@@ -6,8 +6,7 @@
 }
 
 <head>
-
-
+@section Styles{
     <style>
         a:hover {
             cursor: pointer;
@@ -19,25 +18,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
         }
 
         .item {
             width: 1300px;
             height: 650px;
         }
-        #carousel-example-generic{
-            width:1300px;
-            height:650px;
-            
-        }
-            .item img {
-                width: 1300px;
-                height: 650px;
-                object-fit: cover;
-                object-position: center center;
-            }
 
+        #carousel-example-generic {
+            width: 1300px;
+            height: 650px;
+        }
+
+        .item img {
+            width: 1300px;
+            height: 650px;
+            object-fit: cover;
+            object-position: center center;
+        }
 
         .carousel-inner {
             text-align: center;
@@ -61,35 +59,37 @@
 
         .left-img {
             position: absolute;
-            border:groove;
-            border-radius:15px;
+            border: groove;
+            border-radius: 15px;
             transition: transform 0.3s, border-color 0.3s;
-            
         }
 
-        #left-img-element{
+        #left-img-element {
             border-radius: 15px;
         }
-            .left-img:hover {
-                transform: scale(1.1); /* 圖片放大 10% */
-                border-color: #FFE4CA;
-            }
+
+        .left-img:hover {
+            transform: scale(1.1); /* 圖片放大 10% */
+            border-color: #FFE4CA;
+        }
+
         .right-img {
             position: absolute;
             border: groove;
             right: 0;
-            border-radius:15px;
+            border-radius: 15px;
             transition: transform 0.3s, border-color 0.3s;
-           
         }
 
-        #right-img-element{
+        #right-img-element {
             border-radius: 15px;
         }
+
         .right-img:hover {
             transform: scale(1.1); /* 图片放大 10% */
-                border-color: #FFE4CA;
-            }
+            border-color: #FFE4CA;
+        }
+
         .image-wrapper {
             width: 100%;
             height: 300px;
@@ -114,29 +114,26 @@
             white-space: nowrap;
             color: #5B5B5B;
             font-size: 12px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
         }
 
 
         .indexTitle {
             margin: 80px 0 20px 0;
             text-align: center;
-
         }
 
             .indexTitle .iconStyle {
                 background: #f0f0f0; /* 設置背景颜色 */
                 height: 50px;
                 position: relative;
-
-               
             }
 
                 .indexTitle .iconStyle span {
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    transform: translate(-50%, -50%); 
+                    transform: translate(-50%, -50%);
                     z-index: 1;
                 }
 
@@ -147,23 +144,22 @@
 
         .fs-xl {
             font-size: 30px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
-
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
         }
 
 
 
-        .right-and-left-img{
-            height:400px;
+        .right-and-left-img {
+            height: 400px;
         }
 
         .zoom-card {
-            border:outset;
+            border: outset;
             transition: transform 0.3s;
             border-radius: 15px;
         }
 
-        .zoom-card:hover {
+            .zoom-card:hover {
                 transform: scale(1.1);
                 border-color: #FFE4CA;
             }
@@ -171,32 +167,32 @@
         .Name-title {
             text-align: center;
             color: #5B5B5B;
-            font-size:18px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
+            font-size: 18px;
+            font-family:  "Microsoft JhengHei", "PMingLiU", serif;
         }
-        .Name-body{
+
+        .Name-body {
             text-align: center;
             color: #5B5B5B;
             font-size: 16px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
         }
 
-        .Evaluate-Comments{
+        .Evaluate-Comments {
             color: #5B5B5B;
             font-size: 14px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
-
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
         }
 
         .Evaluate-Comments-Collect {
             text-align: center;
             color: #5B5B5B;
             font-size: 14px;
-            font-family: "標楷體", "Microsoft JhengHei", "PMingLiU", serif;
-
+            font-family:"Microsoft JhengHei", "PMingLiU", serif;
         }
-        #evaluate-bottom{
-            margin-bottom:15px;
+
+        #evaluate-bottom {
+            margin-bottom: 15px;
         }
 
         .toTop-arrow {
@@ -238,38 +234,21 @@
                 outline: none;
             }
         /*=====================以上是回到最上層的CSS=========================*/
-         
     </style>
-
+ }
 
 </head>
 <button type="button" id="BackTop" class="toTop-arrow"></button>
 
-<body style="background-color:gainsboro">
     <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
-        @* <div class="breadcrumbs" style="background-color:orange;">
-            <div class="container">
-
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2></h2>
-                    <ol>
-                         <li><a a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li>Index</li>
-                    </ol>
-                </div>
-            </div>
-                        </div><!-- End Breadcrumbs -->*@
-
         <section class="sample-page">
 
 
             <div class="container" data-aos="fade-up">
 
                 <!--==============================================-->
-
-
                 <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
                     <!-- 輪播指示器 -->
                     <ol class="carousel-indicators">
@@ -281,15 +260,14 @@
 
                     <!-- 輪播內容 -->
                     <div class="carousel-inner" role="listbox" style="margin-top:95px;">
-                        @foreach (var adimage in Model.Item7.OrderBy(s=>s.StoreId).Take(4)){
-                       
-                         
+                        @foreach (var adimage in Model.Item7.OrderBy(s => s.StoreId).Take(4))
+                        {
                             <div class="item @(adimage == Model.Item7.First() ? "active" : "")">
                                 <div class="image-container">
                                     <a href="@Url.Action("Restaurant", "store", new { id = adimage.StoreId })">
 
-                                            <img src="~/images/store/@adimage.ImagePath" class="carousel-image" />
-                                        
+                                        <img src="~/images/store/@adimage.ImagePath" class="carousel-image" />
+
                                     </a>
                                 </div>
                                 <div class="carousel-caption">
@@ -297,7 +275,7 @@
                                     <p>@adimage.Store.RestaurantPhone</p>
                                 </div>
                             </div>
-                            }
+                        }
                     </div>
 
                     <!-- 左右箭頭 -->
@@ -313,18 +291,13 @@
 
                 <div class="indexTitle">
                     <div class="iconStyle">
-                        <span class="fa fa-hotjar fc-secondary fs-xxl"> </span>   <div class="titleIA fs-xl">行銷專欄</div> 
+                        <span class="fa fa-hotjar fc-secondary fs-xxl"> </span>   <div class="titleIA fs-xl">行銷專欄</div>
                     </div>
-                   
-                  
                 </div>
-
-
                 <div class="right-and-left-img">
                     @{
                         int index = Model.Item7.Count - 1;
                     }
-
                     @for (int i = 0; i < 2 && index >= 0; i++)
                     {
                         var rest = Model.Item1;
@@ -341,7 +314,6 @@
                                     {
                                         @item.RestaurantName
                                     }
-                                    @*@(adImage?.ImagePath?.Replace(".jpg", ""))*@
                                 </span>
                             </span>
                         }
@@ -356,48 +328,19 @@
                                     {
                                         @item.RestaurantName
                                     }
-                                 @*   @(adImage?.ImagePath?.Replace(".jpg", ""))*@
+
                                 </span>
                             </span>
                         }
-
                         index--;
                     }
-
                 </div>
-
-              @*  <div class="indexTitle">
+                <div class="indexTitle">
                     <div class="iconStyle">
-                        <span class="fa fa-hotjar fc-secondary fs-xxl"></span>  <div class="titleIA fs-xl">熱門關鍵字</div>
+                        <span class="fa fa-hotjar fc-secondary fs-xxl"></span>  <div class="titleIA fs-xl">熱門收藏</div>
                     </div>
                 </div>
                 <div class="row">
-                    @foreach(var item in Model.Item1.Take(2)){
-                    <div class="col-sm-3">
-                        <div class="card zoom-card" style="width: 32rem;" id="evaluate-bottom">
-
-                          
-
-                                    <div id="storeType" data-aos="fade-up">
-                               
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                    }
-                </div>*@
-
-                 <div class="indexTitle">
-                    <div class="iconStyle">
-                        <span class="fa fa-hotjar fc-secondary fs-xxl"></span>  <div class="titleIA fs-xl">熱門收藏</div>
-                    </div>   
-                </div>
-              
-
-                <div class="row"> 
                     @foreach (var advertisement in Model.Item1.OrderByDescending(s => s.MemberActions.Count).Take(4))
                     {
                         string imgName = advertisement.RestaurantName + ".jpg";
@@ -417,12 +360,8 @@
                                                         <input type="hidden" class="rating-value" value="@advertisement.Rating" />
                                                         <i class="bi bi-suit-heart-fill" style="color:red"></i><label id="labFavorate">@advertisement.MemberActions.Count</label>
                                                     </span>
-                                                 
                                                 </div>
-                                               
-                                               
-                                               @advertisement.RestaurantName
-                                               
+                                                @advertisement.RestaurantName
                                             </div>
                                             <div class="Name-body">
                                                 @foreach (var member in Model.Item4.Where(s => s.MemberId == Evaluate.MemberId))
@@ -431,7 +370,7 @@
                                                 }
                                             </div>
                                             <div class="Evaluate-Comments-Collect">
-                                                
+
                                                 @Evaluate.Comments
                                             </div>
                                         }
@@ -441,13 +380,10 @@
                         </div>
                     }
                 </div>
-
                 <div class="indexTitle">
                     <div class="iconStyle">
                         <span class="fa fa-hotjar fc-secondary fs-xxl"></span> <div class="titleIA fs-xl">膳糧專欄</div>
                     </div>
-                    
-                   
                 </div>
                 <div class="row">
                     @foreach (var ShanLiangBlog in Model.Item5.Take(4))
@@ -470,10 +406,6 @@
                                         <div class="card-body-blog-123 Evaluate-Comments">
                                             @ShanLiangBlog.BlogContent
                                         </div>
-
-
-
-
                                     </div>
                                 </a>
                             </div>
@@ -485,18 +417,16 @@
                     <div class="iconStyle">
                         <span class="fa fa-hotjar fc-secondary fs-xxl"></span>  <div class="titleIA fs-xl">最新評論</div>
                     </div>
-                   
-                    
                 </div>
                 <div class="row">
-                    @foreach (var evaluate in Model.Item3.OrderByDescending(s=>s.EvaluateDate).Take(4))
+                    @foreach (var evaluate in Model.Item3.OrderByDescending(s => s.EvaluateDate).Take(4))
                     {
                         string imgName = evaluate.Store.RestaurantName + ".jpg";
                         <div class="col-sm-3">
                             <div class="card zoom-card" style="width: 32rem;" id="evaluate-bottom">
                                 <a href="@Url.Action("Restaurant", "store", new { id = evaluate.StoreId })">
                                     <div class="image-wrapper">
-                                      
+
                                         <img src="~/images/test/@imgName" class="img-fluid carousel-image" />
                                     </div>
                                     <div class="card-body-123">
@@ -511,17 +441,13 @@
                                             @(evaluate.EvaluateDate?.ToString("yyyy-MM-dd"))
                                             @evaluate.Comments
                                         </div>
-
                                     </div>
                                 </a>
                             </div>
                         </div>
-
                     }
                 </div>
             </div>
-          
-
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -560,28 +486,7 @@
                         }
                     }).scroll();
                 });
-
-              
-                 
-                //const StoreType = document.querySelector('#storeType');
-
-                //async function getRtype() {
-                // const response = await fetch('@Url.Content("~/Store/GetRestaurantType/")' + 1)
-             
-                //const datas = await response.json();
-                //    const shop = datas.map(data => {
-                //        return (
-                //            StoreType.innerHTML += `<a style="margin-right:10px;" href="../../Store/searchRestaurantType/${data.restaurantTypeNum}"><i class="bi bi-shop-window" style="margin-right:5px;"></i>${data.typeName}</a>`
-                //        )
-                //    })
-                //}
-                //getRtype();
-                        
-
             </script>
-
-
             <!--==============================================-->
         </section>
     </main><!-- End #main -->
-</body>

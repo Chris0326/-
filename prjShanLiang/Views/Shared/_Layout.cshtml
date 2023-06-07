@@ -11,12 +11,7 @@
     <meta property="og:title" content="Your Website Title" />
     <meta property="og:description" content="Your description" />
     <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-    <!-- 原CSS -->
-    @*
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/prjShanLiang.styles.css" asp-append-version="true" />
-    *@
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -51,7 +46,12 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-    <style>        
+    <style>
+        body {
+            font-size: 15px;
+            background-color: #E0E0E0;
+        }
+
         .cartQuantity {
             position: absolute;
             width: 25px;
@@ -61,7 +61,7 @@
             justify-content: center;
             align-items: center;
             right: -10px;
-            top: -15px;            
+            top: -15px;
         }
 
         .pt-5 {
@@ -69,14 +69,14 @@
             margin-bottom: 20px;
         }
 
-        .logo{
+        .logo {
             margin-bottom: 20px;
         }
     </style>
     @await RenderSectionAsync("Styles",required:false)
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-  
+
+
 
 </head>
 
@@ -95,34 +95,36 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li>                        
+                    <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="List">
-                            <img src="~/images/icons/restaurant.png" style="margin:auto;width:40px;"> 餐廳一覽</a>
-                    </li>                    
-                    <li>                        
+                            <img src="~/images/icons/restaurant.png" style="margin:auto;width:40px;"> 餐廳一覽
+                        </a>
+                    </li>
+                    <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Blogger" asp-action="BloggerCard">
-                            <img src="~/images/icons/blogicon.png" style="margin:auto;width:40px;"> 膳糧專欄</a>
-                    </li>                    
-                    <li>                        
+                            <img src="~/images/icons/blogicon.png" style="margin:auto;width:40px;"> 膳糧專欄
+                        </a>
+                    </li>
+                    <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Mypage">
                             <img src="~/images/icons/mypageicon.png" style="margin:auto;width:40px;"> 會員中心
                         </a>
                     </li>
-                    <li>                        
+                    <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="BuyAdv">
                             <img src="~/images/icons/adicon.png" style="margin:auto;width:40px;"> 廣告行銷方案
                         </a>
                     </li>
-                    <li>                       
+                    <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Shopping" asp-action="Menu" asp-route-StoreId="1">
                             <img src="~/images/icons/menuicon.png" style="margin:auto;width:40px;"> 訂餐
                         </a>
                     </li>
-                    <li style="display:flex;font-size:15px;margin-left:80px;" class="showUserName" text-white bg-warning" id="isLogin"></li>
-                    
+                    <li style="display:flex;font-size:15px;" class="showUserName" text-white bg-warning" id="isLogin"></li>
+
                 </ul>
             </nav>
-            <div>                
+            <div>
                 <div class="container pt-5">
                     <a class="position-relative" href="@Url.Action("CartView", "Shopping")">
                         @*轉跳購物車畫面*@
@@ -130,10 +132,10 @@
                         <span class="cartQuantity text-white bg-warning"></span>   @*顯示購物車目前數量*@
                     </a>
                 </div>
-            </div>            
+            </div>
         </div>
-                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>        
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </header><!-- End Header -->
     @RenderBody()
 
@@ -210,7 +212,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <!-- bootstrap@5.3.0 -->
-   @* <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
+    @* <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -239,7 +241,6 @@
                     alert("無法獲取購物車數量");
                 }
             });
-            
         });
 
         const loginText = document.getElementById('isLogin');
@@ -254,7 +255,7 @@
                         var greeting = "您好，";
                         if (userName !== '請先登入') {
                             var logoutLink = '<a href="/User/logOut" >登出</a>';
-                            $('.showUserName').html(greeting + userName + logoutLink  );
+                            $('.showUserName').html(greeting + userName + logoutLink);
                         }
                     }
                 },
@@ -263,10 +264,7 @@
                 }
             });
         });
-
-        
     </script>
-    @await RenderSectionAsync("Scripts", required: false)    
-
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
