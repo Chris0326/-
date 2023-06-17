@@ -18,13 +18,35 @@ namespace prjShanLiang.Controllers
             _db = db;
             _enviro = p;
         }
+        //public IActionResult Menu(int? StoreId)
+        //{    //店家餐點頁面  傳入店家Id            
+
+        //   HttpContext.Session.SetInt32(CDictionary.SK_STOREMEAL_STOREID,(int)StoreId);//傳入的店家ID存到Session
+
+        //   IEnumerable<MealMenu> datas = _db.MealMenus.Where(t => t.StoreId == StoreId).Include(t=>t.Store).Include(t =>t.MealOrderDetails);
+
+        //    return View(datas);
+        //}
+
         public IActionResult Menu(int? StoreId)
         {    //店家餐點頁面  傳入店家Id            
 
-           HttpContext.Session.SetInt32(CDictionary.SK_STOREMEAL_STOREID,(int)StoreId);//傳入的店家ID存到Session
-  
-           IEnumerable<MealMenu> datas = _db.MealMenus.Where(t => t.StoreId == StoreId).Include(t=>t.Store).Include(t =>t.MealOrderDetails);
-            
+
+            var storeinfo = _db.Stores.Where(t => t.StoreId == StoreId).Select(t => new { t.RestaurantAddress, t.RestaurantName, t.RestaurantPhone });
+
+            HttpContext.Session.SetInt32(CDictionary.SK_STOREMEAL_STOREID, (int)StoreId);//傳入的店家ID存到Session
+
+            ViewBag.StoreId = StoreId;
+
+            foreach (var item in storeinfo)
+            {
+                ViewBag.RestaurantAddress = item.RestaurantAddress;
+                ViewBag.RestaurantName = item.RestaurantName;
+                ViewBag.RestaurantPhone = item.RestaurantPhone;
+            }
+
+            IEnumerable<MealMenu> datas = _db.MealMenus.Include(t => t.MealOrderDetails).Where(t => t.StoreId == StoreId);
+
             return View(datas);
         }
 

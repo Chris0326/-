@@ -163,7 +163,17 @@
    
 <!-- ======= Breadcrumbs ======= -->
         @*店家資訊*@  
-        @{
+
+        <div class=" shadow p-3 mb-5 bg-white custom-border " style="margin:20px 50px ;">
+             <div style="text-align:center">
+              <h1 style="font-size:40px;">@ViewBag.RestaurantName</h1>
+              <p>@ViewBag.RestaurantAddress</p>
+              <p>@ViewBag.RestaurantPhone</p>             
+             </div>
+        </div>
+
+
+        @*{
             MealMenu mealMenu = Model.FirstOrDefault();
            
             <div class=" shadow p-3 mb-5 bg-white custom-border " style="margin:20px 50px ;">
@@ -173,7 +183,7 @@
               <p>@mealMenu.Store.RestaurantPhone</p>             
              </div>
            </div>
-       }             
+       } *@            
           <div style="background-color:orange;">
               <h1 style="text-align:center;margin:10px;">人氣排行前6名</h1>
               </div>
